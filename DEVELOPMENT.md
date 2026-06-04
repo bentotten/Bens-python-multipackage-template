@@ -2,8 +2,9 @@
 
 ## Table of Contents
 
-- [Environment Setup](#environment-setup)
+- [Environment Setup](#environment-setup-and-build)
 - [Running Checks](#running-checks)
+- [Documentation](#documentation)
 - [Cleaning](#cleaning)
 - [Windows](#windows-note)
 
@@ -37,6 +38,7 @@ micromamba deactivate
 | `make check-codestyle` | Check formatting without making changes          |
 | `make type-check`      | Run static type checking with mypy               |
 | `make test`            | Run the test suite with pytest                   |
+| `make docs`            | Build HTML documentation                         |
 | `make format`          | Auto-fix lint and formatting issues (local only) |
 | `make ci`              | Run all checks in sequence (mirrors CI)          |
 
@@ -49,6 +51,24 @@ micromamba deactivate
 | `make clean-pyc`   | Remove compiled Python files and `__pycache__` |
 | `make clean-test`  | Remove test and coverage artifacts             |
 | `make clean-docs`  | Remove generated documentation                 |
+
+## Documentation
+
+Docs are built with [Sphinx](https://www.sphinx-doc.org/) using Google-style docstrings and the [Furo](https://pradyunsg.me/furo/) theme.
+
+Build the HTML docs:
+
+```bash
+make docs
+```
+
+Output is written to `docs/_build/html/`. Open `docs/_build/html/index.html` in a browser to view.
+
+To remove generated docs:
+
+```bash
+make clean-docs
+```
 
 
 ## Windows Note

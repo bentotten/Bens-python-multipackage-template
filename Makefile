@@ -30,7 +30,6 @@ clean-test:
 	rm -fr .ruff_cache/
 
 clean-docs:
-	cd docs && make clean
 	rm -fr docs/_build
 
 # ---------------------------------------------------------------
@@ -55,7 +54,7 @@ test:
 # Local convenience
 # ---------------------------------------------------------------
 
-.PHONY: format ci build
+.PHONY: format ci build docs
 
 format:
 	ruff check --fix $(LINT_PATHS)
@@ -68,3 +67,8 @@ ci: lint check-codestyle type-check test
 build:
 	uv pip install -e ".[dev]"
 	@echo "Build complete. Run with 'bss'"
+
+# Generate HTML documentation
+docs: build
+	sphinx-build -b html docs docs/_build/html
+	@echo "Docs built. Open docs/_build/html/index.html"
