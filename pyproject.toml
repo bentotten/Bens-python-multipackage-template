@@ -2,7 +2,7 @@
 # Non-Python dependencies (e.g. system libraries, CUDA, BLAS) belong in environment.yaml.
 
 [build-system]
-requires = ["setuptools>=68", "setuptools-scm>=8"]
+requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -44,7 +44,7 @@ select = [
 [tool.mypy]
 python_version = "3.12"
 strict = true
-files = ["src"]
+files = ["src", "tests"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
