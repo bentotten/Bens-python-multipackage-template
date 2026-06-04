@@ -1,5 +1,5 @@
 SHELL=/bin/bash
-LINT_PATHS = src/ tests/
+LINT_PATHS = packages/ apps/ tests/
 
 # ---------------------------------------------------------------
 # Cleaning
@@ -63,8 +63,10 @@ format:
 # Run all checks (mirrors CI)
 ci: lint check-codestyle type-check test
 
-# Build/install the project
+# Install all workspace packages and dev dependencies
 build:
+	uv pip install -e "packages/my_core"
+	uv pip install -e "apps/my_cli"
 	uv pip install -e ".[dev]"
 	@echo "Build complete. Run with 'cli'"
 

@@ -2,12 +2,32 @@
 
 ## Table of Contents
 
+- [Project Structure](#project-structure)
 - [Environment Setup](#environment-setup-and-build)
 - [Running Checks](#running-checks)
 - [Running CI Locally](#running-ci-locally)
 - [Documentation](#documentation)
 - [Cleaning](#cleaning)
 - [Windows](#windows-note)
+
+## Project Structure
+
+This project is a multi-package monorepo managed with [uv workspaces](https://docs.astral.sh/uv/concepts/workspaces/).
+
+Each package under `packages/` and `apps/` has its own `pyproject.toml` and can be installed and run independently on separate devices or instances.
+
+```
+├── packages/          # Installable library packages
+│   └── ...
+├── apps/              # Runnable applications
+│   └── ...
+├── tests/
+│   ├── unit/          # Per-package unit tests
+│   └── integration/   # Cross-package integration tests
+├── docs/              # Sphinx documentation
+├── environment.yaml   # Micromamba environment (Python + system deps)
+└── pyproject.toml     # Workspace root (uv config, dev tools, lint/mypy)
+```
 
 ## Environment Setup and Build
 
@@ -34,7 +54,7 @@ micromamba deactivate
 
 | Command                | Description                                      |
 |------------------------|--------------------------------------------------|
-| `make build`           | Install the project and dev dependencies         |
+| `make build`           | Install all workspace packages and dev dependencies |
 | `make lint`            | Check for code quality issues with ruff          |
 | `make check-codestyle` | Check formatting without making changes          |
 | `make type-check`      | Run static type checking with mypy               |

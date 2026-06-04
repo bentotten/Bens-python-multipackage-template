@@ -1,6 +1,6 @@
 # MyProject
 
-A template for single-package python projects consisting of my favorite setups. 
+A template for multi-package python project consisting of my favorite setups. This is set up so that each subpackage can be installed and deployed independently, allowing for independent edge and cloud deployments without bloating dependencies.
 
 ## Table of Contents
 
@@ -8,6 +8,7 @@ A template for single-package python projects consisting of my favorite setups.
     - [Note for Windows users](#note-for-windows-users)
     - [micromamba](#micromamba)
 - [Installation](#installation)
+- [Deploying Packages Independently](#deploying-packages-independently)
 
 ## Prerequisites
 
@@ -77,4 +78,16 @@ To deactivate:
 
 ```bash
 micromamba deactivate
+```
+
+## Deploying Packages Independently
+
+Each sub-package has its own `pyproject.toml` and can be installed on its own, without pulling in the entire repository. This allows different parts of the project to run on different devices or instances with only the dependencies they need.
+
+```bash
+# Core library only
+uv pip install -e "packages/my_library"
+
+# Application
+uv pip install -e "apps/my_app"
 ```

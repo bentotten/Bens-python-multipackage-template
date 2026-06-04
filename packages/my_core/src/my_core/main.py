@@ -1,6 +1,6 @@
-"""Entry point for MyProject."""
+"""Entry point for my_core."""
 
-from my_project import __version__
+from my_core import __version__
 
 
 def run() -> None:

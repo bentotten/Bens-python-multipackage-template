@@ -4,7 +4,8 @@
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path("../src").resolve()))
+sys.path.insert(0, str(Path("../packages/my_core/src").resolve()))
+sys.path.insert(0, str(Path("../apps/my_cli/src").resolve()))
 
 # -- Project information -----------------------------------------------------
 
