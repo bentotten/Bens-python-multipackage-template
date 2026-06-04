@@ -19,6 +19,7 @@ def test_version_defined() -> None:
 def test_build_parser_returns_parser() -> None:
     """Test that build_parser returns an ArgumentParser."""
     import argparse
+
     parser = build_parser()
     assert isinstance(parser, argparse.ArgumentParser)
 
