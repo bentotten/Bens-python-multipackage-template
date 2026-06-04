@@ -48,6 +48,10 @@ jobs:
           init-shell: bash
           cache-environment: true
 
+      - name: Build
+        shell: micromamba-shell {0}
+        run: make build
+
       - name: Lint
         shell: micromamba-shell {0}
         run: make lint
