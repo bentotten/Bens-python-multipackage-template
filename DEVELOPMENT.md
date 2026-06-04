@@ -4,6 +4,7 @@
 
 - [Environment Setup](#environment-setup-and-build)
 - [Running Checks](#running-checks)
+- [Running CI Locally](#running-ci-locally)
 - [Documentation](#documentation)
 - [Cleaning](#cleaning)
 - [Windows](#windows-note)
@@ -51,6 +52,29 @@ micromamba deactivate
 | `make clean-pyc`   | Remove compiled Python files and `__pycache__` |
 | `make clean-test`  | Remove test and coverage artifacts             |
 | `make clean-docs`  | Remove generated documentation                 |
+
+## Running CI Locally
+
+[`act`](https://github.com/nektos/act) runs GitHub Actions workflows locally using Docker. It is installed as part of the micromamba environment.
+
+**Note:** Docker must be installed and running.
+
+```bash
+act
+```
+
+To run a specific workflow or job:
+
+```bash
+act -W .github/workflows/pre-merge.yaml
+act -j build
+```
+
+If you hit missing dependencies in the default runner image, use the full image:
+
+```bash
+act -P ubuntu-latest=catthehacker/ubuntu:full-latest
+```
 
 ## Documentation
 
