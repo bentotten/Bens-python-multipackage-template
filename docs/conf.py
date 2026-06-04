@@ -8,8 +8,8 @@ sys.path.insert(0, str(Path("../src").resolve()))
 
 # -- Project information -----------------------------------------------------
 
-project = "Behavior Similarity Search"
-author = "Behavior Similarity Search Contributors"
+project = "MyProject"
+author = "MyProject Contributors"
 release = "0.1.0"
 
 # -- General configuration ---------------------------------------------------

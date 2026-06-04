@@ -1,8 +1,7 @@
-Behavior Similarity Search
-==========================
+MyProject
+=========
 
-A computer vision package for detecting whether specific behaviours
-are present in video segments.
+A Python package. Replace this description with your own.
 
 .. toctree::
    :maxdepth: 2

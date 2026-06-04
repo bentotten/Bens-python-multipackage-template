@@ -1,17 +1,17 @@
 API Reference
 =============
 
-.. automodule:: behavior_similarity_search
+.. automodule:: my_project
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: behavior_similarity_search.cli
+.. automodule:: my_project.cli
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: behavior_similarity_search.main
+.. automodule:: my_project.main
    :members:
    :undoc-members:
    :show-inheritance:

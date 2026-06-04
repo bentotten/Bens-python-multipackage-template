@@ -66,7 +66,7 @@ ci: lint check-codestyle type-check test
 # Build/install the project
 build:
 	uv pip install -e ".[dev]"
-	@echo "Build complete. Run with 'bss'"
+	@echo "Build complete. Run with 'cli'"
 
 # Generate HTML documentation
 docs: build

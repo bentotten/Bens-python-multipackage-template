@@ -1,4 +1,4 @@
-"""Command-line interface for Behavior Similarity Search."""
+"""Command-line interface for MyProject."""
 
 import argparse
 
@@ -10,8 +10,8 @@ def build_parser() -> argparse.ArgumentParser:
         argparse.ArgumentParser: Configured argument parser.
     """
     parser = argparse.ArgumentParser(
-        prog="behavior-similarity-search",
-        description="Search for behaviorally similar items.",
+        prog="my-project",
+        description="MyProject.",
     )
     return parser
 

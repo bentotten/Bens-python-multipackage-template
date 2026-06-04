@@ -1,5 +1,6 @@
-# BehaviorSimilaritySearch
-A computer vision project to detect if specific behaviours are present in video segments.
+# MyProject
+
+A template for single-package python projects consisting of my favorite setups. 
 
 ## Table of Contents
 
@@ -57,13 +58,19 @@ Create and activate the environment:
 
 ```bash
 micromamba create -f environment.yaml
-micromamba activate behavior-similarity-search
+micromamba activate my-project
 ```
 
 Then install the project:
 
 ```bash
 make build
+```
+
+To run:
+
+```bash
+cli
 ```
 
 To deactivate:

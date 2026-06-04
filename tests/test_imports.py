@@ -1,13 +1,13 @@
 """Basic import tests to verify the package structure is intact."""
 
-import behavior_similarity_search
-from behavior_similarity_search import __version__
-from behavior_similarity_search.main import run
+import my_project
+from my_project import __version__
+from my_project.main import run
 
 
 def test_package_importable() -> None:
     """Test that the top-level package is importable."""
-    assert behavior_similarity_search is not None
+    assert my_project is not None
 
 
 def test_version_defined() -> None:
